@@ -13,4 +13,11 @@ class Marca extends Model
     [
         'nombre'
     ];
+
+
+    // una marca tiene varios modelos
+    public function  modelos()
+    {
+        return $this->hasMany(Modelo::class);
+    }
 }

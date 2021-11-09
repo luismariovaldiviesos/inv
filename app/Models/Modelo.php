@@ -13,4 +13,12 @@ class Modelo extends Model
     [
         'nombre', 'marca_id'
     ];
+
+    // un modelo pertenece a una marca
+
+    public function marca()
+    {
+        return $this->belongsTo(Marca::class);
+    }
+
 }
