@@ -13,4 +13,11 @@ class Tis extends Model
     [
         'nombre','serie','af','ac','modelo_id','unidad_id','tipo_id','user_id'
     ];
+
+     // un tis(telefono-impresora-scanner)  pertence a una unidad
+
+     public function unidad()
+     {
+         return $this->belongsTo(Unidad::class);
+     }
 }

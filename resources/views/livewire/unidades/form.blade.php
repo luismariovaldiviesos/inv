@@ -15,14 +15,14 @@
 
     <div class="col-sm-12">
         <div class="form-group">
-            <label >Cantón</label>
-            <select wire:model.lazy="canton_id" class="form-control">
+            <label >Edificio</label>
+            <select wire:model.lazy="edificio_id" class="form-control">
                 <option value="Elegir" selected>Elegir</option>
-                @foreach ($cantones as $c )
-                <option value="{{ $c->id }}" >{{ $c->nombre }}</option>
+                @foreach ($edificios as $e )
+                <option value="{{ $e->id }}" >{{ $e->nombre }}</option>
                 @endforeach
             </select>
-            @error('provincia_id') <span class="text-danger er">{{ $message }}</span> @enderror
+            @error('edificio_id') <span class="text-danger er">{{ $message }}</span> @enderror
         </div>
     </div>
 </div>

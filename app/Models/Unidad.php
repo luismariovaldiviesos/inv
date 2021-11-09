@@ -16,8 +16,30 @@ class Unidad extends Model
 
     // una unidad  pertence a un edificio
 
-    public function unidad()
+    public function edificio()
     {
         return $this->belongsTo(Edificio::class);
     }
+
+
+    // una unidad tiene varios tis (telefonos-imprsoras-scanners)
+
+    public function tis ()
+    {
+        return $this->hasMany(Tis::class);
+    }
+
+    // una unidad tiene varios periferics
+
+    public function perifericos ()
+    {
+        return $this->hasMany(Periferico::class);
+    }
+
+     // una unidad tiene varios compus
+
+     public function compus ()
+     {
+         return $this->hasMany(Computadora::class);
+     }
 }

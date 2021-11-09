@@ -13,4 +13,26 @@ class Tipo extends Model
     [
         'nombre'
     ];
+
+
+    // un tipo tiene varios tis
+
+    public  function tis ()
+    {
+        return $this->hasMany(Tis::class);
+    }
+
+    // un tipo tiene varios perifericos
+
+    public  function perifericos ()
+    {
+        return $this->hasMany(Periferico::class);
+    }
+
+    // un tipo tiene varios compus
+
+    public  function compus ()
+    {
+        return $this->hasMany(Computadora::class);
+    }
 }

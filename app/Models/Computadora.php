@@ -13,4 +13,12 @@ class Computadora extends Model
     [
         'nombre', 'ram','dd','serie','af','ac','modelo_id','unidad_id','tipo_id','user_id'
     ];
+
+
+    // una compu  pertence a una unidad
+
+    public function unidad()
+    {
+        return $this->belongsTo(Unidad::class);
+    }
 }

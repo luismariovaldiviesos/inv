@@ -13,4 +13,17 @@ class Periferico extends Model
     [
         'nombre', 'serie','af','modelo_id','unidad_id','tipo_id','user_id'
     ];
+
+     // un perriferico  pertence a una unidad
+
+     public function unidad()
+     {
+         return $this->belongsTo(Unidad::class);
+     }
+
+     // un periferico pertenece a un tipo
+     public function tipo()
+     {
+         return $this->belongsTo(Tipo::class);
+     }
 }
