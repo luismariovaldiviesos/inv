@@ -13,4 +13,11 @@ class Unidad extends Model
     [
         'nombre', 'edificio_id'
     ];
+
+    // una unidad  pertence a un edificio
+
+    public function unidad()
+    {
+        return $this->belongsTo(Edificio::class);
+    }
 }

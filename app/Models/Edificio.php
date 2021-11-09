@@ -19,5 +19,12 @@ class Edificio extends Model
     {
         return $this->belongsTo(Canton::class);
     }
+
+    // un edificio tiene varias unidaddes
+
+    public function unidades()
+    {
+        return $this->hasMany(Unidad::class);
+    }
 }
 

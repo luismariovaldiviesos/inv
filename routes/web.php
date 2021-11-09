@@ -16,6 +16,7 @@ use App\Http\Livewire\CalendarController;
 
 use App\Http\Livewire\ProvinciasController;
 use App\Http\Livewire\CantonesController;
+use App\Http\Livewire\EdificiosController;
 
 
 /*
@@ -52,6 +53,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('provincias', ProvinciasController::class);
 Route::get('cantones', CantonesController::class);
+Route::get('edificios', EdificiosController::class);
 
 
 
