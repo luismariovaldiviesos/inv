@@ -8,21 +8,21 @@
                     </span>
                 </span>
             </div>
-            <input type="text" wire:model.lazy="nombre" class="form-control" placeholder="nombre de la unidad judicial">
+            <input type="text" wire:model.lazy="nombre" class="form-control" placeholder="nombre del modelo">
              @error('nombre') <span class="text-danger er">{{ $message }}</span> @enderror
         </div>
     </div>
 
     <div class="col-sm-12">
         <div class="form-group">
-            <label >Edificio</label>
-            <select wire:model.lazy="edificio_id" class="form-control">
+            <label >Marca</label>
+            <select wire:model.lazy="marca_id" class="form-control">
                 <option value="Elegir" selected>Elegir</option>
-                @foreach ($edificios as $e )
-                <option value="{{ $e->id }}" >{{ $e->nombre }}</option>
+                @foreach ($marcas as $m )
+                <option value="{{ $m->id }}" >{{ $m->nombre }}</option>
                 @endforeach
             </select>
-            @error('edificio_id') <span class="text-danger er">{{ $message }}</span> @enderror
+            @error('provincia_id') <span class="text-danger er">{{ $message }}</span> @enderror
         </div>
     </div>
 </div>

@@ -21,4 +21,11 @@ class Computadora extends Model
     {
         return $this->belongsTo(Unidad::class);
     }
+
+    // una compu  pertence a un modelo
+
+    public function modelo()
+    {
+        return $this->belongsTo(Modelo::class);
+    }
 }

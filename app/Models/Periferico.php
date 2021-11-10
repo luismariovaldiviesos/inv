@@ -26,4 +26,10 @@ class Periferico extends Model
      {
          return $this->belongsTo(Tipo::class);
      }
+
+     // un periferico pertenece a un modelo
+     public function modelo()
+     {
+         return $this->belongsTo(Modelo::class);
+     }
 }

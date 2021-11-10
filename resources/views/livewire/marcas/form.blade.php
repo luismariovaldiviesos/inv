@@ -8,7 +8,7 @@
                     </span>
                 </span>
             </div>
-            <input type="text" wire:model.lazy="nombre" class="form-control" placeholder="tipo equipo">
+            <input type="text" wire:model.lazy="nombre" class="form-control" placeholder="nombre de la marca">
              @error('nombre') <span class="text-danger er">{{ $message }}</span> @enderror
         </div>
     </div>

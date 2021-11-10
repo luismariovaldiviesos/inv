@@ -20,4 +20,11 @@ class Tis extends Model
      {
          return $this->belongsTo(Unidad::class);
      }
+
+     // un tis(telefono-impresora-scanner)  pertence a un modelo
+
+     public function modelo()
+     {
+         return $this->belongsTo(Modelo::class);
+     }
 }
