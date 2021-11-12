@@ -11,7 +11,7 @@ class Periferico extends Model
 
     protected $fillable =
     [
-        'nombre', 'serie','af','modelo_id','unidad_id','tipo_id','user_id'
+        'nombre', 'serie','af','modelo_id','unidad_id','user_id'
     ];
 
      // un perriferico  pertence a una unidad

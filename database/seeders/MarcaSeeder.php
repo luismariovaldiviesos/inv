@@ -59,9 +59,7 @@ class MarcaSeeder extends Seeder
         Marca::create([
             'nombre' => 'FUJITSU'
         ]);
-        Marca::create([
-            'nombre' => 'HP'
-        ]);
+
         Marca::create([
             'nombre' => 'HP SCANJET'
         ]);
