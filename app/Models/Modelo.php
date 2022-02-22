@@ -21,27 +21,6 @@ class Modelo extends Model
         return $this->belongsTo(Marca::class);
     }
 
-     // un modelo  tiene varios tis (telefonos-imprsoras-scanners)
-
-     public function tis ()
-     {
-         return $this->hasMany(Tis::class);
-     }
-
-     // un modelo  tiene varios periferics
-
-    public function perifericos ()
-    {
-        return $this->hasMany(Periferico::class);
-    }
-
-     // un modelo  tiene varios compus
-
-     public function compus ()
-     {
-         return $this->hasMany(Computadora::class);
-     }
-
 
 
 }

@@ -24,22 +24,22 @@ class Unidad extends Model
 
     // una unidad tiene varios tis (telefonos-imprsoras-scanners)
 
-    public function tis ()
-    {
-        return $this->hasMany(Tis::class);
-    }
+    // public function tis ()
+    // {
+    //     return $this->hasMany(Tis::class);
+    // }
 
     // una unidad tiene varios periferics
 
-    public function perifericos ()
-    {
-        return $this->hasMany(Periferico::class);
-    }
+    // public function perifericos ()
+    // {
+    //     return $this->hasMany(Periferico::class);
+    // }
 
      // una unidad tiene varios compus
 
-     public function compus ()
+     public function pcs ()
      {
-         return $this->hasMany(Computadora::class);
+         return $this->hasMany(Pc::class);
      }
 }

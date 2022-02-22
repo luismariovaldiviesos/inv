@@ -22,21 +22,28 @@
                     <table class="table mt-1 table-bordered table-striped">
                         <thead class="text-white" style="background: #3B3F5C">
                             <tr>
-                                <th class="text-white table-th">ID</th>
-                                <th class="text-white table-th">NOMBRE</th>
-                                <th class="text-white table-th">MARCA</th>
-                                <th class="text-white table-th">ACCIONES</th>
+                                <th class="text-white table-th text-center">ID</th>
+                                <th class="text-white table-th text-center">NOMBRE</th>
+                                <th class="text-white table-th text-center">MARCA</th>
+                                <th class="text-white table-th text-center">TIPO</th>
+                                <th class="text-white table-th text-center">ACCIONES</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($modelos as $mod)
                                 <tr>
-                                    <td><h6>{{$mod->id}}</h6></td>
-                                    <td><h6> {{$mod->nombre}}</h6></td>
-                                    <td><h6> {{$mod->marca->nombre}}</h6></td>
+                                    <td class="text-center"><h6>{{$mod->id}}</h6></td>
+                                    <td class="text-center"><h6> {{$mod->nombre}}</h6></td>
+                                    <td class="text-center"><h6> {{$mod->marca->nombre}}</h6></td>
 
+                                    <td class="text-center"><h6>
+                                        @foreach ($mod->marca->tipos as $tip )
+                                       <span class="badge badge-success"><h6 class="text-center">{{$tip->nombre}}</h6></span>
+                                        @endforeach
+                                    </td>
+                                </h6>
 
-                                    <td>
+                                    <td class="text-center">
 
 
                                         <a href="javascript:void(0)"
@@ -49,9 +56,7 @@
                                         los cantones edificios  --}}
 
                                         <a href="javascript:void(0)"
-                                        onClick="Confirm({{ $mod->id }},  {{ $mod->tis->count() }},
-                                        {{ $mod->perifericos->count() }},
-                                        {{ $mod->compus->count() }})"
+                                        onClick="Confirm({{ $mod->id }})"
                                         class="btn btn-dark " title="Delete">
                                             <i class="fas fa-trash"></i>
                                         </a>

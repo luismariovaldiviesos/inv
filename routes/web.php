@@ -19,6 +19,7 @@ use App\Http\Livewire\CantonesController;
 use App\Http\Livewire\EdificiosController;
 use App\Http\Livewire\MarcasController;
 use App\Http\Livewire\ModelosController;
+use App\Http\Livewire\PcsController;
 use App\Http\Livewire\TiposController;
 use App\Http\Livewire\UnidadesController;
 
@@ -61,6 +62,8 @@ Route::get('unidades', UnidadesController::class);
 Route::get('tipos', TiposController::class);
 Route::get('marcas', MarcasController::class);
 Route::get('modelos', ModelosController::class);
+
+Route::get('pcs', PcsController::class);
 
 
 

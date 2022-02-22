@@ -16,9 +16,8 @@ class CreateMarcaTipoTable extends Migration
         Schema::create('marca_tipo', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('marca_id');
-            $table->foreign('marca_id')->references('id')->on('marcas');
-
             $table->unsignedBigInteger('tipo_id');
+            $table->foreign('marca_id')->references('id')->on('marcas');
             $table->foreign('tipo_id')->references('id')->on('tipos');
 
             $table->timestamps();

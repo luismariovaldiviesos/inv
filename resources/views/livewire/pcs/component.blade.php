@@ -22,25 +22,33 @@
                     <table class="table mt-1 table-bordered table-striped">
                         <thead class="text-white" style="background: #3B3F5C">
                             <tr>
-                                <th class="text-white table-th">ID</th>
                                 <th class="text-white table-th">NOMBRE</th>
-                                <th class="text-white table-th">CANTON</th>
+                                <th class="text-white table-th">SERIE</th>
+                                <th class="text-white table-th">ACTIVO FIJO</th>
+                                <th class="text-white table-th">MARCA</th>
+                                <th class="text-white table-th">MODELO</th>
+                                <th class="text-white table-th">UBICACION</th>
+                                <th class="text-white table-th">USUARIO ASIGNADO</th>
                                 <th class="text-white table-th">ACCIONES</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($unidades as $uni)
+                            @foreach($pcs as $pc)
                                 <tr>
-                                    <td><h6>{{$uni->id}}</h6></td>
-                                    <td><h6> {{$uni->nombre}}</h6></td>
-                                    <td><h6> {{$uni->edificio->nombre}}</h6></td>
+                                    <td><h6> {{$pc->nombre}}</h6></td>
+                                    <td><h6> {{$pc->serie}}</h6></td>
+                                    <td><h6> {{$pc->af}}</h6></td>
+                                    <td><h6> {{$pc->modelo->marca->nombre}}</h6></td>
+                                    <td><h6> {{$pc->modelo->nombre}}</h6></td>
+                                    <td><h6> {{$pc->unidad->edificio->nombre}}</h6></td>
+                                    <td><h6> {{$pc->user->name}}</h6></td>
 
 
                                     <td>
 
 
                                         <a href="javascript:void(0)"
-                                        wire:click="Edit({{$uni->id}})"
+                                        wire:click="Edit({{$pc->id}})"
                                         class="btn btn-dark mtmobile" title="Edit">
                                             <i class="fas fa-edit"></i>
                                         </a>
@@ -49,8 +57,7 @@
                                         los cantones edificios  --}}
 
                                         <a href="javascript:void(0)"
-                                        onClick="Confirm({{ $uni->id }},
-                                        {{ $uni->pcs->count() }})"
+                                        onClick="Confirm({{ $pc->id }})"
                                         class="btn btn-dark " title="Delete">
                                             <i class="fas fa-trash"></i>
                                         </a>
@@ -60,7 +67,7 @@
                             @endforeach
                         </tbody>
                     </table>
-                    {{$unidades->links()}}
+                    {{$pcs->links()}}
                 </div>
 
             </div>
@@ -69,7 +76,7 @@
 
     </div>
 
-    @include('livewire.unidades.form')
+    @include('livewire.pcs.form')
 
 </div>
 
@@ -84,17 +91,17 @@
         });
 
         // evento que viene desde el Store
-        window.livewire.on('unidad-added', Msg=>{
+        window.livewire.on('pc-added', Msg=>{
             $('#theModal').modal('hide');
             noty(Msg)
         });
 
          // evento que viene desde el Update
-         window.livewire.on('unidad-updated', Msg=>{
+         window.livewire.on('pc-updated', Msg=>{
             $('#theModal').modal('hide');
             noty(Msg)
         });
-        window.livewire.on('unidad-deleted', Msg=>{
+        window.livewire.on('pc-deleted', Msg=>{
             noty(Msg)
         });
 
@@ -103,23 +110,23 @@
 
      // para eliminar envia un emit con el id al fornt donde se debe cachar en los listeners
 
-     function Confirm(id, tis, perifericos, compus) // perifericos cps etc para validar
+     function Confirm(id)
      {
-         if(tis > 0)
-         {
-             swal('NO SE PEUDE ELIMINAR LA UNIDAD PORQUE TIENE IMPRESORAS, TELEFONO O SCANNERS RELACIONADOS')
-             return ;
-         }
-         if(perifericos > 0)
-         {
-             swal('NO SE PEUDE ELIMINAR LA UNIDAD PORQUE TIENE PERIFERICOS RELACIONADOS')
-             return ;
-         }
-         if(compus > 0)
-         {
-             swal('NO SE PEUDE ELIMINAR EL EDIFICIO PORQUE TIENE COMPUTADORAS RELACIONADAS')
-             return ;
-         }
+        // if(tis > 0)
+        //  {
+        //      swal('NO SE PEUDE ELIMINAR EL MODELO  PORQUE TIENE IMPRESORAS, TELEFONO O SCANNERS RELACIONADOS')
+        //      return ;
+        //  }
+        //  if(perifericos > 0)
+        //  {
+        //      swal('NO SE PEUDE ELIMINAR EL MODELO  PORQUE TIENE PERIFERICOS RELACIONADOS')
+        //      return ;
+        //  }
+        //  if(compus > 0)
+        //  {
+        //      swal('NO SE PEUDE ELIMINAR EL MODELO PORQUE TIENE COMPUTADORAS RELACIONADAS')
+        //      return ;
+        //  }
 
          swal({
              title: 'CONFIRMAR',

@@ -44,6 +44,7 @@ class ModelosController extends Component
         {
             $data = Modelo::orderBy('id','asc')
             ->paginate($this->pagination);
+            //dd($data);
         }
         return view('livewire.modelos.component',  ['modelos' => $data]) ->extends('layouts.theme.app')
         ->section('content');

@@ -14,10 +14,16 @@ class Marca extends Model
         'nombre'
     ];
 
-
     // una marca tiene varios modelos
     public function  modelos()
     {
         return $this->hasMany(Modelo::class);
     }
+
+    // una marca pertenece a varios tipos
+    public function tipos(){
+        return $this->belongsToMany(Tipo::class,'marca_tipo');
+    }
+
+
 }

@@ -46,9 +46,7 @@
                                         los cantones edificios  --}}
 
                                         <a href="javascript:void(0)"
-                                        onClick="Confirm({{ $tipo->id }} , {{ $tipo->tis->count() }},
-                                        {{ $tipo->perifericos->count() }},
-                                        {{ $tipo->compus->count() }})"
+                                        onClick="Confirm({{ $tipo->id }})"
                                         class="btn btn-dark " title="Delete">
                                             <i class="fas fa-trash"></i>
                                         </a>
