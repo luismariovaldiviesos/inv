@@ -39,6 +39,7 @@ class MarcasController extends Component
         {
             $data = Marca::orderBy('id','asc')
             ->paginate($this->pagination);
+
         }
         return view('livewire.marcas.component',  ['marcas' => $data]) ->extends('layouts.theme.app')
         ->section('content');

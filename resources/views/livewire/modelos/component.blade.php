@@ -25,7 +25,7 @@
                                 <th class="text-white table-th text-center">ID</th>
                                 <th class="text-white table-th text-center">NOMBRE</th>
                                 <th class="text-white table-th text-center">MARCA</th>
-                                <th class="text-white table-th text-center">TIPO</th>
+                                {{-- <th class="text-white table-th text-center">TIPO</th> --}}
                                 <th class="text-white table-th text-center">ACCIONES</th>
                             </tr>
                         </thead>
@@ -36,12 +36,13 @@
                                     <td class="text-center"><h6> {{$mod->nombre}}</h6></td>
                                     <td class="text-center"><h6> {{$mod->marca->nombre}}</h6></td>
 
+{{--
                                     <td class="text-center"><h6>
                                         @foreach ($mod->marca->tipos as $tip )
                                        <span class="badge badge-success"><h6 class="text-center">{{$tip->nombre}}</h6></span>
                                         @endforeach
-                                    </td>
-                                </h6>
+                                    </td> --}}
+
 
                                     <td class="text-center">
 
