@@ -49,10 +49,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // Route::get('/estados', EstadosController::class);
 // Route::get('/pagos', PagosController::class); // TIPOS PAGOS
 // Route::get('/medicos', MedicosController::class);
-// Route::get('/usuarios', UsersController::class);
-// Route::get('roles', RolesController::class);
-// Route::get('permisos', PermisosController::class);
-// Route::get('asignar', AsignarController::class);
+
+
+
 // Route::get('clinica', ClinicaController::class);
 
 Route::get('provincias', ProvinciasController::class);
@@ -62,6 +61,11 @@ Route::get('unidades', UnidadesController::class);
 Route::get('tipos', TiposController::class);
 Route::get('marcas', MarcasController::class);
 Route::get('modelos', ModelosController::class);
+Route::get('usuarios', UsersController::class);
+Route::get('roles', RolesController::class);
+Route::get('permisos', PermisosController::class);
+Route::get('asignar', AsignarController::class);
+
 
 Route::get('pcs', PcsController::class);
 

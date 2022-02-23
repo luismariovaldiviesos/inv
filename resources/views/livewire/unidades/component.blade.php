@@ -24,7 +24,7 @@
                             <tr>
                                 <th class="text-white table-th">ID</th>
                                 <th class="text-white table-th">NOMBRE</th>
-                                <th class="text-white table-th">CANTON</th>
+                                <th class="text-white table-th">EDIFICIO</th>
                                 <th class="text-white table-th">ACCIONES</th>
                             </tr>
                         </thead>

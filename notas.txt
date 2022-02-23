@@ -1,2 +1,7 @@
 hace falta validar para que no se elimine marca modelo tipo si tienen registros
 si marca tiene modelos no, si tipo tiene modelos no, si modelos tiene marca  y tipo no
+
+******************************************************************************************
+seeder de permisos y roles
+******************************************************************************************
+sidebar para logout
