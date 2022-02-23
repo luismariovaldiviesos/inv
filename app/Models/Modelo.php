@@ -11,14 +11,21 @@ class Modelo extends Model
 
     protected $fillable =
     [
-        'nombre', 'marca_id'
+        'nombre', 'marca_id','tipo_id'
     ];
+
+
+
+    public  function tipo()
+    {
+        return  $this->belongsTo(Tipo::class);
+    }
 
     // un modelo pertenece a una marca
 
-    public function marca()
+    public  function marca()
     {
-        return $this->belongsTo(Marca::class);
+        return  $this->belongsTo(Marca::class);
     }
 
 

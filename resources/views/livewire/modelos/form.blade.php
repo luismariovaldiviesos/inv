@@ -22,7 +22,19 @@
                 <option value="{{ $m->id }}" >{{ $m->nombre }}</option>
                 @endforeach
             </select>
-            @error('provincia_id') <span class="text-danger er">{{ $message }}</span> @enderror
+            @error('marca_id') <span class="text-danger er">{{ $message }}</span> @enderror
+        </div>
+    </div>
+    <div class="col-sm-12">
+        <div class="form-group">
+            <label >Tipo Dispositipo</label>
+            <select wire:model.lazy="tipo_id" class="form-control">
+                <option value="Elegir" selected>Elegir</option>
+                @foreach ($tipos as $t )
+                <option value="{{ $t->id }}" >{{ $t->nombre }}</option>
+                @endforeach
+            </select>
+            @error('tipo_id') <span class="text-danger er">{{ $message }}</span> @enderror
         </div>
     </div>
 </div>

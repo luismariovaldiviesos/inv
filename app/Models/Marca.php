@@ -20,10 +20,10 @@ class Marca extends Model
         return $this->hasMany(Modelo::class);
     }
 
-    // una marca pertenece a varios tipos
-    public function tipos(){
-        return $this->belongsToMany(Tipo::class,'marca_tipo');
-    }
+    // // una marca pertenece a varios tipos
+    // public function tipos(){
+    //     return $this->belongsToMany(Tipo::class,'marca_tipo');
+    // }
 
 
 }

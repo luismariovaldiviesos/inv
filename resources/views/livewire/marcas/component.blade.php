@@ -24,7 +24,7 @@
                             <tr>
                                 <th class="text-white table-th text-center">ID</th>
                                 <th class="text-white table-th text-center">NOMBRE</th>
-                                <th class="text-white table-th text-center">EQUIPOS EN ESTA MARCA</th>
+                                <th class="text-white table-th text-center">MODELOS</th>
                                 <th class="text-white table-th text-center">ACCIONES</th>
 
                             </tr>
@@ -35,8 +35,8 @@
                                     <td class="text-center"><h6>{{$marca->id}}</h6></td>
                                     <td class="text-center"><h6> {{$marca->nombre}}</h6></td>
                                     <td class="text-center"><h6>
-                                        @foreach ($marca->tipos as $tip  )
-                                       <span class="badge badge-success"><h6 class="text-center">{{$tip->nombre}}</h6></span>
+                                        @foreach ($marca->modelos as $model  )
+                                       <span class="badge badge-success"><h6>{{$model->nombre}}</h6></span>
                                         @endforeach
                                     </td>
                                     <td class="text-center">

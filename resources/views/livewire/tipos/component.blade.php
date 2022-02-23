@@ -24,6 +24,7 @@
                             <tr>
                                 <th class="text-white table-th">ID</th>
                                 <th class="text-white table-th">NOMBRE</th>
+                                <th class="text-white text-center table-th">MODELOS POR TIPO</th>
                                 <th class="text-white table-th">ACCIONES</th>
 
                             </tr>
@@ -33,6 +34,11 @@
                                 <tr>
                                     <td><h6>{{$tipo->id}}</h6></td>
                                     <td><h6> {{$tipo->nombre}}</h6></td>
+                                    <td class="text-center"><h6>
+                                        @foreach ($tipo->modelos as $model  )
+                                       <span class="badge badge-success"><h6>{{$model->nombre}}</h6></span>
+                                        @endforeach
+                                    </td>
                                     <td>
 
 
